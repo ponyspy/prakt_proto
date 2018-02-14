@@ -1,13 +1,25 @@
 body
 	margin 0
 	padding 0
+	// font-smoothing: antialiased;
+	// -moz-osx-font-smoothing: grayscale;
 
 .title_block
-	background-color lightgrey
+	// background-color lightgrey
 	overflow hidden
 	text-align center
 	height 160px
 	font 12pt/14pt 'PT Mono'
+	&.open
+		background-color black
+		a
+			color white!important
+		.search, .logo, .menu_open
+			filter: invert(100%)
+	.title_inner
+		position relative
+		margin-left 40px
+		margin-right 40px
 	.nav_block
 		display inline-block
 		overflow hidden
@@ -33,9 +45,10 @@ body
 		background-position center
 		background-repeat no-repeat
 		float left
+		cursor pointer
 	.menu_block
 		position absolute
-		left 20px
+		left 0
 		padding-top 5px
 		a
 			margin-top 5px
@@ -60,24 +73,24 @@ body
 			.items_drop
 				display none
 	.logo
-		padding 20px
+		padding-top 20px
+		padding-bottom 20px
 		width 120px
 		position absolute
 		right 0
 
 
 .footer_block
-	background-color rgba(131, 193, 216, 1.000)
 	font 12pt/14pt 'PT Mono'
 	padding-top 20px
 	padding-bottom 20px
 	.footer_inner
+		margin-left 40px
+		margin-right 40px
 		padding-top 20px
 		display flex
 		justify-content space-between
 		border-top 1px solid black
-		margin-left 20px
-		margin-right 20px
 	a
 		color black
 		text-decoration none
