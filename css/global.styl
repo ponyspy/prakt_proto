@@ -5,22 +5,27 @@ body
 .title_block
 	background-color lightgrey
 	overflow hidden
+	.nav_block
+		float left
+		background-color green
+	.menu_open
+		background-color grey
+		width 40px
+		height 40px
+		background-image url('../img/menu.svg')
+		background-size contain
+		background-position center
+		background-repeat no-repeat
+		float left
 	.menu_block
 		float left
 		a
+			display block
 			color black
 			text-decoration none
 			margin-right 20px
 			&:hover
 				text-decoration underline
-		.menu_open
-			background-color grey
-			width 40px
-			height 40px
-			background-image url('../img/menu.svg')
-			background-size contain
-			background-position center
-			background-repeat no-repeat
 		.menu_drop
 			display none
 	.logo
