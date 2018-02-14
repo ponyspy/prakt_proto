@@ -9,4 +9,8 @@ block content_scripts
 	script(type='text/javascript', src='js/main.js')
 
 block content
-	h1 Main!
+	.slider_block.swiper-container
+		.swiper-wrapper
+			each slide, i in new Array(3)
+				.slide_item.swiper-slide(style='background-image: url(img/bg/' + (i+1) + '.jpg)')
+		.swiper-pagination.swiper-pagination-white

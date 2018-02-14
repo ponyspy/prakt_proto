@@ -1,15 +1,17 @@
 body
 	margin 0
 	padding 0
-	// font-smoothing: antialiased;
-	// -moz-osx-font-smoothing: grayscale;
+	font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 
 .title_block
-	// background-color lightgrey
+	width 100%
 	overflow hidden
 	text-align center
 	height 160px
 	font 12pt/14pt 'PT Mono'
+	position relative
+	z-index 9999999
 	&.open
 		background-color black
 		a
@@ -81,9 +83,11 @@ body
 
 
 .footer_block
+	width 100%
 	font 12pt/14pt 'PT Mono'
 	padding-top 20px
 	padding-bottom 20px
+	z-index 9999999
 	.footer_inner
 		margin-left 40px
 		margin-right 40px
