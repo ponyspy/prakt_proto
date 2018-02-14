@@ -1,0 +1,72 @@
+html, body
+	height 100%
+
+.title_block
+	position absolute
+	a
+		color white!important
+	.search, .logo, .menu_open
+		filter: invert(100%)
+
+.footer_block
+	position absolute
+	bottom 0
+	.footer_inner
+		border-color white
+		.quality_block a
+			border-color white
+	img
+		filter: invert(100%)
+	a
+		color white!important
+
+.content_block
+	position absolute
+	width 100%
+	height 100%
+	background-color black
+
+.slider_navigate
+	position absolute
+	bottom 0px
+	bottom 110px
+	font 14pt/14pt 'PT Mono'
+	color white
+	left 40px
+	z-index 9999999999999
+	.navigate_item
+		float left
+		margin-right 20px
+		cursor pointer
+		&:hover
+			opacity 0.7
+
+.slider_block
+	width 100%
+	height 100%
+	opacity 0.85
+	.slide_item
+		width 100%
+		height 100%
+		background-size cover
+		background-position center
+		background-repeat no-repeat
+		color white
+		.slide_body
+			margin-top 160px
+			margin-left 40px
+			.slide_title
+				max-width 720px
+				font 22pt/24pt 'PT Mono Bold'
+			.slide_desc
+				max-width 720px
+				font 12pt/14pt 'PT Mono'
+	.swiper-button-next
+		right 40px
+	.swiper-button-prev
+		left 40px
+	.swiper-pagination
+		bottom 110px
+		left auto!important
+		right 40px!important
+		width auto
