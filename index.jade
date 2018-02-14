@@ -9,8 +9,11 @@ block content_scripts
 	script(type='text/javascript', src='js/main.js')
 
 block content
+	a.announcement_block(href='#')
+		.announcement_title обновилось расписание на январь
+		.announcement_desc Успейте купить билетына детскую новогоднюю программу и любимые спектакли
 	.slider_block.swiper-container
 		.swiper-wrapper
-			each slide, i in new Array(3)
+			each slide, i in new Array(1)
 				.slide_item.swiper-slide(style='background-image: url(img/bg/' + (i+1) + '.jpg)')
 		.swiper-pagination.swiper-pagination-white
