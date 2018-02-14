@@ -7,15 +7,36 @@ html
 		link(rel='stylesheet', type='text/css', href='css/fonts.css')
 		link(rel='stylesheet', type='text/css', href='css/global.css')
 		block content_styles
-		script(type='text/javascript', src='js/jquery-2.2.4.min.js')
+		script(type='text/javascript', src='js/libs/jquery-2.2.4.min.js')
 		script(type='text/javascript', src='js/global.js')
 		block content_scripts
 	body
-		.menu_block
-			span Cool Menu
+		.title_block
+			.menu_block
+				.menu_open
+				.menu_main
+					a(href='#') репертуар и билеты
+					a(href='#') контакты
+				.menu_drop
+					a(href='#') команда
+					a(href='#') о театре
+					a(href='#') фонд театра
+					a(href='#') документы
+			img.logo(src='img/logo_praktika.svg')
 
 		.content_block
 			block content
 
 		.footer_block
-			span Cool Footer
+			a.department(href='#'): img(src='/img/logo_depcult.svg')
+			.quality_block
+				a(href='#')
+					img(src='img/likes-01.svg')
+					span Оценка качества услуг учреждений культуры
+				a(href='#')
+					span Результаты независимой оценки качества услуг
+			.social_block
+				a(href='#'): img(src='img/facebook.svg')
+				a(href='#'): img(src='img/instagram.svg')
+				a(href='#'): img(src='img/vk.svg')
+				a(href='#'): img(src='img/telegram.svg')
