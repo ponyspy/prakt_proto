@@ -4,15 +4,25 @@
 	padding-left 35px
 	padding-right 35px
 
+.members_header
+	top 160px
+	width 100%
+	max-width 960px
+	padding-top 20px
+	background-color white
+	position absolute
+	z-index 999
+	&.fix
+		position fixed
+		top 0
 
 .members_title
 	font 22pt/24pt 'PT Mono Bold'
-	margin-top 20px
 	margin-bottom 10px
 
 .members_category
 	font 14pt/16pt 'PT Mono'
-	margin-bottom 40px
+	margin-bottom 20px
 	cursor pointer
 	&:after
 		content ''
@@ -31,10 +41,14 @@
 
 
 .outer
+	margin-top 100px
+	margin-bottom 60px
 	overflow hidden
-	background-color green
-	padding 5px
+	// background-color green
+	padding 10px
 	box-sizing border-box
+	margin-left -20px
+	margin-right -20px
 
 .block
 	text-align center
@@ -47,7 +61,7 @@
 		&:after
 			content ''
 			display block
-			bottom -5px
+			bottom -10px
 			position absolute
 			left 0
 			right 0
@@ -60,10 +74,10 @@
 			border-bottom 10px solid violet
 	.in
 		position absolute
-		top 5px
-		left 5px
-		right 5px
-		bottom 5px
+		top 10px
+		left 10px
+		right 10px
+		bottom 10px
 		margin auto
 		background-color grey
 
@@ -71,7 +85,7 @@
 	float left
 	width 100%
 	.in
-		padding 5px
+		padding 10px
 		box-sizing border-box
-		margin 5px
+		margin 10px
 		background-color violet

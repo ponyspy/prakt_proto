@@ -36,15 +36,26 @@ $(function() {
 		});
 
 		$('body').animate({
-			'scrollTop': $current_block.offset().top - 5
+			'scrollTop': $current_block.offset().top - $('.members_header').height() - 10
 		}, 300);
 
 	});
 
-	$('.outer').on('click', function(e) {
-		if (e.target.className !== 'in') {
-			$('.panel').remove();
-			$blocks.removeClass('active');
-		}
+	$(document).on('mouseup touchend', function(event) {
+		if ($(event.target).closest('.in').length) return;
+
+		$('.panel').remove();
+		$blocks.removeClass('active');
+
+		event.stopPropagation();
+	});
+
+	$(document).on('scroll', function(e) {
+		var $title = $('.title_block');
+		var $members_header = $('.members_header');
+
+		$(this).scrollTop() >= $title.height() + $title.offset().top
+			? $members_header.addClass('fix')
+			: $members_header.removeClass('fix');
 	});
 });
