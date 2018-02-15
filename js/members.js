@@ -10,7 +10,7 @@ $(function() {
 		$set.each(function() {
 			var $this = $(this);
 
-			if ($this.offset().left + $this.width() > $('.outer').width()) {
+			if ($this.offset().left + $this.width() > $('.outer').width() + $('.outer').offset().left) {
 				var $panel = $('<div/>', {'class': 'panel'});
 				var $in = $('<div/>', {'class': 'in', 'text': $current_block.text() + ' - ' + lorem_text });
 
