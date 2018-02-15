@@ -1,0 +1,14 @@
+extends layout.jade
+
+block content_styles
+	link(rel='stylesheet', type='text/css', href='css/members.css')
+
+block content_scripts
+	script(type='text/javascript', src='js/members.js')
+
+block content
+	.members_title команда
+	.members_category все
+	.outer
+		each block,i in new Array(30)
+			.block: .in= (i+1)
