@@ -1,32 +1,33 @@
 $(function() {
 	var lorem_text = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 
-	$blocks = $('.block');
+	$members = $('.member_item');
 
-	$blocks.on('click', function(e) {
+	$members.on('click', function(e) {
 		var $current_block = $(this);
-		var $set = $current_block.nextAll('.block').addBack(this);
+		var $set = $current_block.nextAll('.member_item').addBack(this);
 
 		$set.each(function() {
 			var $this = $(this);
+			var $members_list = $('.members_list');
 
-			if ($this.offset().left + $this.width() > $('.outer').width() + $('.outer').offset().left) {
+			if ($this.offset().left + $this.width() > $members_list.width() + $members_list.offset().left) {
 				var $panel = $('<div/>', {'class': 'panel'});
 				var $in = $('<div/>', {'class': 'in', 'text': $current_block.text() + ' - ' + lorem_text });
 
 				$('.panel').remove();
-				$blocks.removeClass('active');
+				$members.removeClass('active');
 
 				$current_block.addClass('active');
 				$this.after($panel.append($in));
 
 				return false;
-			} else if ($this.index('.block') + 1 == $blocks.length) {
+			} else if ($this.index('.member_item') + 1 == $members.length) {
 				var $panel = $('<div/>', {'class': 'panel'});
 				var $in = $('<div/>', {'class': 'in', 'text': $current_block.text() + ' - ' + lorem_text })
 
 				$('.panel').remove();
-				$blocks.removeClass('active');
+				$members.removeClass('active');
 
 				$current_block.addClass('active');
 				$set.last().after($panel.append($in));
@@ -41,21 +42,27 @@ $(function() {
 
 	});
 
-	$(document).on('mouseup touchend', function(event) {
-		if ($(event.target).closest('.in').length) return;
+	$(document)
+		.on('mouseenter', '.member_item', function(e) {
+			$('.members_title').text($(this).attr('data-name'));
+		})
+		.on('mouseleave', '.member_item', function(e) {
+			$('.members_title').text($('.members_title').attr('data-title'));
+		})
+		.on('mouseup touchend', function(e) {
+			if ($(event.target).closest('.in').length) return;
 
-		$('.panel').remove();
-		$blocks.removeClass('active');
+			$('.panel').remove();
+			$members.removeClass('active');
 
-		event.stopPropagation();
-	});
+			event.stopPropagation();
+		})
+		.on('scroll', function(e) {
+			var $title = $('.title_block');
+			var $members_header = $('.members_header');
 
-	$(document).on('scroll', function(e) {
-		var $title = $('.title_block');
-		var $members_header = $('.members_header');
-
-		$(this).scrollTop() >= $title.height() + $title.offset().top
-			? $members_header.addClass('fix')
-			: $members_header.removeClass('fix');
-	});
+			$(this).scrollTop() >= $title.height() + $title.offset().top
+				? $members_header.addClass('fix')
+				: $members_header.removeClass('fix');
+		});
 });

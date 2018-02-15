@@ -7,9 +7,28 @@ block content_scripts
 	script(type='text/javascript', src='js/members.js')
 
 block content
+	- var members = ['дарья ворохобко', 'ксения орлова', 'федор павлов-андреевич', 'яна енжаева']
 	.members_header: .members_header_inner
-		.members_title команда
+		.members_title(data-title='команда') команда
 		.members_category все
-	.outer
-		each block,i in new Array(30)
-			.block: .in= (i+1)
+
+	.members_list
+		each member, i in new Array(30)
+			.member_item(data-name=members[i] ? members[i] : i): .in(style='background-image: url(img/members/' + i + '.jpg)')
+			if i == 3
+				.panel: .in
+					.panel_photo(style='background-image: url(img/members/3.jpg)')
+					.panel_body
+						.member_head
+							.member_name= members[i] ? members[i] : i
+							.member_category актер
+						.member_events
+							.events_title спектакли
+							.events_list
+								a.event_item(href='#') Девушка в любви
+								a.event_item(href='#') Кеды
+						.member_description
+							p Выпускница Школы-студии МХАТ (2015 г.), актриса Мастерской Дмитрия Брусникина.
+							p В Мастерской Дмитрия Брусникина занята в спектаклях «Это тоже я» (театр «Практика»), «Конармия» (Центр имени Вс. Мейерхольда), «Наташина
+							p мечта» (драматический театр «Человек»), «Бесы» и «Второе видение» (Боярские палаты СТД).
+							p Снималась в фильмах «Кухня в Париже», «Выпускной». Работы на ТВ: «Легко ли быть молодым» (ТНТ), «Эти глаза напротив», «Метод».
