@@ -13,6 +13,7 @@
 	background-color white
 	position absolute
 	top 160px
+	z-index 999
 	&.fix
 		position fixed
 		top 0
@@ -83,6 +84,8 @@
 				font 14pt/16pt 'PT Mono Bold'
 				cursor pointer
 				&:after
+					z-index 0
+					position relative
 					content ''
 					background-image url('../img/arrow_list.svg')
 					width 8px
