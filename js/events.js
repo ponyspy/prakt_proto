@@ -7,4 +7,13 @@ $(function() {
 			$this.scrollLeft($this.children('.timeline_inner').width() * percent);
 		});
 	}
+
+	$(document).on('scroll', function(e) {
+		var $title = $('.title_block');
+		var $timeline = $('.timeline_block');
+
+		$(this).scrollTop() >= $title.height() + $title.offset().top
+			? $timeline.addClass('fix')
+			: $timeline.removeClass('fix');
+	});
 });
