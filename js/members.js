@@ -12,25 +12,33 @@ $(function() {
 			var $members_list = $('.members_list');
 
 			if ($this.offset().left + $this.width() > $members_list.width() + $members_list.offset().left) {
-				var $panel = $('<div/>', {'class': 'panel'});
-				var $in = $('<div/>', {'class': 'in', 'text': $current_block.text() + ' - ' + lorem_text });
+				// var $panel = $('<div/>', {'class': 'panel'});
+				// var $in = $('<div/>', {'class': 'in', 'text': $current_block.text() + ' - ' + lorem_text });
 
-				$('.panel').remove();
+				// $('.panel').remove();
+				// $members.removeClass('active');
+
+				// $current_block.addClass('active');
+				// $this.after($panel.append($in));
+
 				$members.removeClass('active');
-
 				$current_block.addClass('active');
-				$this.after($panel.append($in));
+				$('.panel').show().insertAfter($this);
 
 				return false;
 			} else if ($this.index('.member_item') + 1 == $members.length) {
-				var $panel = $('<div/>', {'class': 'panel'});
-				var $in = $('<div/>', {'class': 'in', 'text': $current_block.text() + ' - ' + lorem_text })
+				// var $panel = $('<div/>', {'class': 'panel'});
+				// var $in = $('<div/>', {'class': 'in', 'text': $current_block.text() + ' - ' + lorem_text })
 
-				$('.panel').remove();
+				// $('.panel').remove();
+				// $members.removeClass('active');
+
+				// $current_block.addClass('active');
+				// $set.last().after($panel.append($in));
+
 				$members.removeClass('active');
-
 				$current_block.addClass('active');
-				$set.last().after($panel.append($in));
+				$set.last().after($('.panel').show());
 
 				return false;
 			}
@@ -52,7 +60,9 @@ $(function() {
 		.on('mouseup touchend', function(e) {
 			if ($(event.target).closest('.in').length) return;
 
-			$('.panel').remove();
+			// $('.panel').remove();
+
+			$('.panel').hide();
 			$members.removeClass('active');
 
 			event.stopPropagation();
