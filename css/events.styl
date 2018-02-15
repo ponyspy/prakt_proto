@@ -1,0 +1,88 @@
+.timeline_block::-webkit-scrollbar {
+	display: none;
+}
+
+.timeline_block
+	width 100%
+	border-top 1px solid black
+	border-bottom 1px solid black
+	overflow scroll
+	padding-left 40px
+	padding-right 40px
+	box-sizing border-box
+	.timeline_inner
+		display inline-block
+		white-space nowrap
+		.month_item
+			display inline-block
+			white-space nowrap
+			border-right 1px solid black
+			margin-right 40px
+			padding-right 40px
+			&:last-child
+				margin-right 0
+				padding-right 0
+				border-right none
+			.day_item
+				display inline-block
+				white-space nowrap
+				margin-right 5px
+				cursor pointer
+				padding-top 10px
+				padding-bottom 10px
+				padding-left 5px
+				padding-right 5px
+				&:hover
+					color white
+					background-color black
+				&:last-child
+					margin-right 0
+				.day_date
+					margin-bottom 6px
+					text-align center
+					font 10pt/12pt 'PT Mono Bold'
+				.day_week
+					font 10pt/12pt 'PT Mono'
+
+
+.events_block
+	max-width 960px
+	padding-left 40px
+	padding-right 40px
+	margin 80px auto
+	background-color lightgrey
+	.event_item
+		overflow hidden
+		margin-bottom 80px
+		.event_poster
+			width 50%
+			height 340px
+			background-position center
+			background-repeat no-repeat
+			background-size cover
+			float left
+		.event_body
+			width 50%
+			float left
+			padding-left 70px
+			box-sizing border-box
+			font 12pt/14pt 'PT Mono'
+			.event_date
+				float left
+			.event_ticket
+				float right
+				font 12pt/14pt 'PT Mono Bold'
+			.event_title
+				clear both
+				margin-top 40px
+				font 22pt/24pt 'PT Mono Bold'
+			.event_age
+				float left
+				&:after
+					content '+'
+			.event_members
+				float left
+				margin-left 60px
+			.event_description
+				clear both
+				margin-top 40px
