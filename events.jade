@@ -22,13 +22,15 @@ block content
 			.event_item
 				.event_poster(style='background-image: url(img/events/1.jpg)')
 				.event_body
-					.event_date 3 сентября
-					.event_ticket купить билет
+					.event_head
+						.event_date 3 сентября
+						.event_ticket купить билет
 					.event_title это тоже я. вербатим
-					.event_age 18
-					.event_members
-						.members_title режиссёры
-						.members_items
-							.item Дмитрий Брусникин
-							.item Юрий Квятковский
+					.event_meta
+						.event_age 18
+						.event_members
+							.members_title режиссёры
+							.members_items
+								a.item(href='#') Дмитрий Брусникин
+								a.item(href='#') Юрий Квятковский
 					.event_description «Брусникинцы» рассказывают истории реальных людей, которые они собрали из жизни — на митингах, вокзалах, в школах, институтах, клубах, на улице и дома
