@@ -23,7 +23,7 @@
 			display inline-block
 			white-space nowrap
 			border-right 1px solid black
-			margin-right 40px
+			margin-right 35px
 			padding-right 40px
 			&:last-child
 				margin-right 0
@@ -55,7 +55,7 @@
 	max-width 960px
 	padding-left 40px
 	padding-right 40px
-	margin 160px auto
+	margin 140px auto
 	.event_item
 		overflow hidden
 		margin-bottom 80px
@@ -81,6 +81,19 @@
 			.event_ticket
 				float right
 				font 14pt/16pt 'PT Mono Bold'
+				cursor pointer
+				&:after
+					content ''
+					background-image url('../img/arrow_list.svg')
+					width 8px
+					height 8px
+					margin-left 15px
+					display inline-block
+					transform rotate(90deg)
+					vertical-align middle
+					background-position top
+					background-size contain
+					background-repeat no-repeat
 			.event_title
 				margin-top 20px
 				margin-bottom 40px
