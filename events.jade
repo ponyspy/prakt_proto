@@ -12,12 +12,12 @@ block content
 	- var week_array = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс']
 
 	.timeline_block: .timeline_inner
-		each month in month_array
+		each month, i in month_array
 			.month_item(data-month=month)
-				each day, i in new Array(30)
+				each day, j in new Array(30)
 					.day_item
-						.day_date= i+1
-						.day_week= week_array[+(''+i)[1] ? +(''+i)[1] : i]
+						.day_date= j+1
+						.day_week= week_array[+(''+j)[1] ? +(''+j)[1] : j]
 
 	.events_block
 		.events_title(data-month='сентябрь') сентябрь

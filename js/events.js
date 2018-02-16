@@ -18,6 +18,13 @@ $(function() {
 	});
 
 	$('.month_item')
+		.on('click', function(e) {
+			$('.events_title').attr('data-month', $(this).attr('data-month'));
+			$('.month_item').removeClass('selected').children('.day_item').off('click').end().filter(this).addClass('selected')
+			.children('.day_item').on('click', function(e) {
+				$('.day_item').removeClass('selected').filter(this).addClass('selected');
+			});
+		})
 		.on('mouseenter', function(e) {
 			$('.events_title').text($(this).attr('data-month'));
 		})
