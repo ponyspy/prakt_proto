@@ -17,8 +17,12 @@ $(function() {
 			: $timeline.removeClass('fix');
 	});
 
-	$(document).on('click', '.month_item.selected .day_item', function(e) {
+	$(document).on('click', '.day_item', function(e) {
 		$('.day_item').removeClass('selected').filter(this).addClass('selected');
+	});
+
+	$(document).on('click', '.day_item.selected', function(e) {
+		$(this).removeClass('selected');
 	});
 
 	$('.month_placeholder')
