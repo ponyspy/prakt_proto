@@ -16,4 +16,12 @@ $(function() {
 			? $timeline.addClass('fix')
 			: $timeline.removeClass('fix');
 	});
+
+	$('.month_item')
+		.on('mouseenter', function(e) {
+			$('.events_title').text($(this).attr('data-month'));
+		})
+		.on('mouseleave', function(e) {
+			$('.events_title').text($('.events_title').attr('data-month'));
+		});
 });
