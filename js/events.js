@@ -26,18 +26,27 @@ $(function() {
 	});
 
 	$('.month_placeholder')
-		.on('click', function(e) {
+		.on('click', function(e, $month_fire) {
 			var $month_item = $(this).parent();
+			var month_name = $month_item.attr('data-month');
 
 			$('.day_item.selected').removeClass('selected');
 			$('.month_placeholder').removeClass('hide').filter(this).addClass('hide');
-			$('.events_title').attr('data-month', $month_item.attr('data-month'));
+			$('.current_month').text(month_name).attr('data-month', month_name);
 			$('.month_item').removeClass('selected').filter($month_item).addClass('selected');
 		})
 		.on('mouseenter', function(e) {
-			$('.events_title').text($(this).parent().attr('data-month'));
+			$('.current_month').text($(this).parent().attr('data-month'));
 		})
 		.on('mouseleave', function(e) {
-			$('.events_title').text($('.events_title').attr('data-month'));
+			$('.current_month').text($('.current_month').attr('data-month'));
 		});
+
+	$('.select_month').on('click', function(e) {
+		if ($(this).hasClass('next')) {
+			$('.month_item.selected').next().children('.month_placeholder').trigger('click');
+		} else {
+			$('.month_item.selected').prev().children('.month_placeholder').trigger('click');
+		}
+	});
 });

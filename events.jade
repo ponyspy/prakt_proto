@@ -22,7 +22,10 @@ block content
 							.day_week= week_array[+(''+j)[1] ? +(''+j)[1] : j]
 
 	.events_block
-		.events_title(data-month='сентябрь') сентябрь
+		.events_title
+			.select_month.prev
+			.current_month(data-month='сентябрь') сентябрь
+			.select_month.next
 
 		.events_list
 			each event in new Array(10)
