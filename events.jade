@@ -13,7 +13,7 @@ block content
 
 	.timeline_block: .timeline_inner
 		each month, i in month_array
-			.month_item(data-month=month)
+			.month_item(class=(i==0 ? 'selected' : ''), data-month=month)
 				each day, j in new Array(30)
 					.day_item
 						.day_date= j+1
