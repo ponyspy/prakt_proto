@@ -28,6 +28,7 @@
 			padding-right 40px
 			padding-left 40px
 			position relative
+			opacity .4
 			.month_placeholder
 				position absolute
 				top 0; left 0; right 0; bottom 0;
@@ -36,7 +37,9 @@
 				&.hide
 					display none
 			&:hover
+				opacity 1
 			&.selected
+				opacity 1
 				background-color rgb(235, 235, 236)
 			&.selected .day_item:hover
 				color white
