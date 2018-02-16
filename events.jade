@@ -11,7 +11,7 @@ block content
 	- var month_array = ['сентябрь', 'октябрь', 'ноябрь']
 	- var week_array = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс']
 
-	.timeline_block: .timeline_inner
+	.timeline_block: .timeline_outer: .timeline_inner
 		each month, i in month_array
 			.month_item(class=(i==0 ? 'selected' : ''), data-month=month)
 				each day, j in new Array(30)

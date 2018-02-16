@@ -1,21 +1,22 @@
-.timeline_block::-webkit-scrollbar {
-	display: none;
-}
-
 .timeline_block
 	width 100%
 	border-top 1px solid black
 	border-bottom 1px solid black
-	overflow scroll
 	box-sizing border-box
 	background-color white
 	position absolute
 	top 160px
 	z-index 999
+	height 60px
+	overflow hidden
 	&.fix
 		position fixed
 		top 0
+	.timeline_outer
+		width 100%
+		overflow hidden	// overflow-x scroll
 	.timeline_inner
+		vertical-align top
 		display inline-block
 		white-space nowrap
 		font-size 0
@@ -32,6 +33,7 @@
 				color white
 				background-color black
 			&:last-child
+				border-right none
 				margin-right 0
 				padding-right 0
 				padding-right 40px
