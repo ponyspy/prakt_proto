@@ -8,29 +8,36 @@ block content_scripts
 
 
 block content
+	- var month_array = ['сентябрь', 'октябрь', 'ноябрь']
 	- var week_array = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс']
+
 	.timeline_block: .timeline_inner
-		each month in new Array(3)
-			.month_item
+		each month in month_array
+			.month_item(data-month=month)
 				each day, i in new Array(30)
 					.day_item
 						.day_date= i+1
 						.day_week= week_array[+(''+i)[1] ? +(''+i)[1] : i]
 
 	.events_block
-		each event in new Array(10)
-			.event_item
-				.event_poster(style='background-image: url(img/events/1.jpg)')
-				.event_body
-					.event_head
-						.event_date 3 сентября
-						.event_ticket купить билет
-					.event_title это тоже я. вербатим
-					.event_meta
-						.event_age 18
-						.event_members
-							.members_title режиссёры
-							.members_items
-								a.item(href='#') Дмитрий Брусникин
-								a.item(href='#') Юрий Квятковский
-					.event_description «Брусникинцы» рассказывают истории реальных людей, которые они собрали из жизни — на митингах, вокзалах, в школах, институтах, клубах, на улице и дома
+		.events_title
+			.title_month сентябрь
+			.title_date
+
+		.events_list
+			each event in new Array(10)
+				.event_item
+					.event_poster(style='background-image: url(img/events/1.jpg)')
+					.event_body
+						.event_head
+							.event_date 3 сентября
+							.event_ticket купить билет
+						.event_title это тоже я. вербатим
+						.event_meta
+							.event_age 18
+							.event_members
+								.members_title режиссёры
+								.members_items
+									a.item(href='#') Дмитрий Брусникин
+									a.item(href='#') Юрий Квятковский
+						.event_description «Брусникинцы» рассказывают истории реальных людей, которые они собрали из жизни — на митингах, вокзалах, в школах, институтах, клубах, на улице и дома

@@ -56,7 +56,41 @@
 	max-width 960px
 	padding-left 40px
 	padding-right 40px
-	margin 140px auto
+	margin 100px auto
+
+.events_title
+	margin-bottom 80px
+	font 16pt/18pt 'PT Mono Bold'
+	&:before
+		content ''
+		z-index 0
+		position relative
+		background-image url('../img/arrow_list.svg')
+		transform rotate(180deg)
+		width 8px
+		height 8px
+		margin-right 15px
+		display inline-block
+		vertical-align middle
+		background-position top
+		background-size contain
+		background-repeat no-repeat
+	&:after
+		content ''
+		z-index 0
+		position relative
+		background-image url('../img/arrow_list.svg')
+		width 8px
+		height 8px
+		margin-left 15px
+		display inline-block
+		vertical-align middle
+		background-position top
+		background-size contain
+		background-repeat no-repeat
+
+
+.events_list
 	.event_item
 		overflow hidden
 		margin-bottom 80px
