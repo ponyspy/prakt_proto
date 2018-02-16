@@ -26,6 +26,14 @@
 			border-right 1px solid black
 			padding-right 40px
 			padding-left 40px
+			position relative
+			.month_placeholder
+				position absolute
+				top 0; left 0; right 0; bottom 0;
+				margin auto
+				cursor pointer
+				&.hide
+					display none
 			&:hover
 			&.selected
 				background-color rgb(235, 235, 236)

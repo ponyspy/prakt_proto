@@ -17,18 +17,21 @@ $(function() {
 			: $timeline.removeClass('fix');
 	});
 
-	$('.month_item')
+	$(document).on('click', '.month_item.selected .day_item', function(e) {
+		$('.day_item').removeClass('selected').filter(this).addClass('selected');
+	});
+
+	$('.month_placeholder')
 		.on('click', function(e) {
-			console.log('month')
-			$('.events_title').attr('data-month', $(this).attr('data-month'));
-			$('.month_item').removeClass('selected').children('.day_item').off('click').end().filter(this).addClass('selected')
-			.children('.day_item').on('click', function(e) {
-				console.log('day')
-				$('.day_item').removeClass('selected').filter(this).addClass('selected');
-			});
+			var $month_item = $(this).parent();
+
+			$('.day_item.selected').removeClass('selected');
+			$('.month_placeholder').removeClass('hide').filter(this).addClass('hide');
+			$('.events_title').attr('data-month', $month_item.attr('data-month'));
+			$('.month_item').removeClass('selected').filter($month_item).addClass('selected');
 		})
 		.on('mouseenter', function(e) {
-			$('.events_title').text($(this).attr('data-month'));
+			$('.events_title').text($(this).parent().attr('data-month'));
 		})
 		.on('mouseleave', function(e) {
 			$('.events_title').text($('.events_title').attr('data-month'));
