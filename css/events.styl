@@ -7,8 +7,6 @@
 	border-top 1px solid black
 	border-bottom 1px solid black
 	overflow scroll
-	padding-left 40px
-	padding-right 40px
 	box-sizing border-box
 	background-color white
 	position absolute
@@ -20,16 +18,19 @@
 	.timeline_inner
 		display inline-block
 		white-space nowrap
+		font-size 0
 		.month_item
 			display inline-block
 			white-space nowrap
 			border-right 1px solid black
-			margin-right 35px
 			padding-right 40px
+			padding-left 40px
+			&:hover
+				background-color lightgrey
 			&:last-child
 				margin-right 0
 				padding-right 0
-				border-right none
+				padding-right 40px
 			.day_item
 				display inline-block
 				white-space nowrap
