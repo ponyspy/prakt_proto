@@ -7,13 +7,13 @@ block content_scripts
 	script(type='text/javascript', src='js/members.js')
 
 block content
-	- var members = ['дарья ворохобко', 'ксения орлова', 'федор павлов-андреевич', 'яна енжаева']
 	.members_header: .members_header_inner
 		.members_title(data-title='команда') команда
 		.members_category все
 
 	.members_list
-		each member, i in new Array(30)
+		include p_db/members.jade
+		each member, i in new Array(60)
 			.member_item(data-name=members[i] ? members[i] : i): .in(style='background-image: url(img/members/' + i + '.jpg)')
 		.panel(style='display: none;'): .in
 			.panel_photo(style='background-image: url(img/members/3.jpg)')

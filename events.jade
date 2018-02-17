@@ -28,19 +28,20 @@ block content
 			.select_month.next
 
 		.events_list
-			each event in new Array(10)
+			include p_db/events.jade
+			each event, i in events
 				.event_item
-					.event_poster(style='background-image: url(img/events/1.jpg)')
+					.event_poster(style='background-image: url(img/events/' + (i+1) + '.jpg)')
 					.event_body
 						.event_head
 							.event_date 3 сентября
 							.event_ticket купить билет
-						.event_title это тоже я. вербатим
+						.event_title= event.title
 						.event_meta
 							.event_age 18
 							.event_members
 								.members_title режиссёры
 								.members_items
-									a.item(href='#') Дмитрий Брусникин
-									a.item(href='#') Юрий Квятковский
-						.event_description «Брусникинцы» рассказывают истории реальных людей, которые они собрали из жизни — на митингах, вокзалах, в школах, институтах, клубах, на улице и дома
+									each director in event.directors
+										a.item(href='#')= director
+						.event_description= event.desc
