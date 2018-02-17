@@ -14,7 +14,7 @@ block content
 	.members_list
 		include p_db/members.jade
 		each member, i in new Array(60)
-			.member_item(data-name=members[i] ? members[i] : i): .in(style='background-image: url(img/members/' + i + '.jpg)')
+			.member_item(data-name=members[i] ? members[i] : i): .in(style= members[i] ? 'background-image: url(img/members/' + i + '.jpg)' : '')
 		.panel(style='display: none;'): .in
 			.panel_photo(style='background-image: url(img/members/3.jpg)')
 			.panel_body
