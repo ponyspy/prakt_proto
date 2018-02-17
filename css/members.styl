@@ -63,9 +63,13 @@
 	padding-top 16.666666667%
 	box-sizing border-box
 	position relative
-	&.active .in
-		border 20px solid white
+	&:hover
+	&.active
+		.in
+			transition 0.20s ease
+			top 40px; left 40px; right 40px; bottom 40px
 	.in
+		transition 0.20s ease
 		background-repeat no-repeat
 		background-position center
 		background-size cover
