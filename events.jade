@@ -9,17 +9,17 @@ block content_scripts
 
 block content
 	- var month_array = ['сентябрь', 'октябрь', 'ноябрь']
-	- var week_array = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс']
+	- var week_array = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс', 'пн', 'вт', 'ср',]
 
 	.timeline_block: .timeline_outer: .timeline_inner
 		each month, i in month_array
 			.month_item(class=(i==0 ? 'selected' : ''), data-month=month)
 				.month_placeholder(class=(i==0 ? 'hide' : ''))
 				.month_days
-					each day, j in new Array(30)
-						.day_item
+					each day, j in week_array
+						.day_item(class=(day == 'сб' || day == 'вс') ? 'weekend': '')
 							.day_date= j+1
-							.day_week= week_array[+(''+j)[1] ? +(''+j)[1] : j]
+							.day_week= day
 
 	.events_block
 		.events_title
