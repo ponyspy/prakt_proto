@@ -8,8 +8,7 @@ block content_scripts
 
 
 block content
-	- var month_array = ['сентябрь', 'октябрь', 'ноябрь']
-	- var week_array = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс', 'пн', 'вт', 'ср',]
+	include p_db/events.jade
 
 	.timeline_block: .timeline_outer: .timeline_inner
 		each month, i in month_array
@@ -28,7 +27,6 @@ block content
 			.select_month.next
 
 		.events_list
-			include p_db/events.jade
 			each event, i in events
 				.event_item
 					.event_poster(style='background-image: url(img/events/' + (i+1) + '.jpg)')
